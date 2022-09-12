@@ -1,18 +1,18 @@
-import { getFruits } from '../apis/fruits'
+import { getVocab } from '../apis/vocab'
 
-export const SET_FRUITS = 'SET_FRUITS'
+export const SET_VOCAB = 'SET_VOCAB'
 
-export function setFruits(fruits) {
+export function setVocab(vocab) {
   return {
-    type: SET_FRUITS,
-    payload: fruits,
+    type: SET_VOCAB,
+    payload: vocab,
   }
 }
 
-export function fetchFruits() {
+export function fetchVocab() {
   return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
+    return getVocab().then((vocab) => {
+      dispatch(setVocab(vocab))
     })
   }
 }

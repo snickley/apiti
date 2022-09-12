@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { fetchFruits } from '../actions'
+import { fetchVocab } from '../actions'
 
 function App() {
-  const fruits = useSelector((state) => state.fruits)
+  const vocab = useSelector((state) => state.vocab)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchFruits())
+    dispatch(fetchVocab())
   }, [])
 
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+        <h1>Fullstack Boilerplate - with te reo Māori!!</h1>
         <ul>
-          {fruits.map((fruit) => (
-            <li key={fruit}>{fruit}</li>
+          {vocab.map((kupu) => (
+            <li key={kupu}>{kupu}</li>
           ))}
         </ul>
       </div>
